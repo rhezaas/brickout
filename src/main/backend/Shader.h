@@ -5,6 +5,7 @@
 
 #include <types/aliases/opengl.h>
 
+
 class Shader {
     private:
         unsigned int program;

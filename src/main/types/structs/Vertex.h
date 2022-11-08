@@ -3,6 +3,7 @@
 
 #include <types/aliases/math.h>
 
+
 struct Vertex {
     Math::Vec3 position;
     Math::Vec3 rgbColor;

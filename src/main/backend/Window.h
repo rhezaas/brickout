@@ -6,6 +6,7 @@
 
 #include <types/aliases/opengl.h>
 
+
 class Window {
     private:
         OpenGL::Window *window;

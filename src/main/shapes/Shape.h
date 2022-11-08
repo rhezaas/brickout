@@ -8,6 +8,7 @@
 #include <types/aliases/math.h>
 #include <types/structs/ModelViewProjection.h>
 
+
 class Shape {
     private:
         float x;

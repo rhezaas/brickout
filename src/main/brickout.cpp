@@ -11,6 +11,7 @@
 #include <types/enums/WindowConstant.h>
 #include <types/structs/ModelViewProjection.h>
 
+
 int main(int argc, char *argv[]) {
     Window window;
 

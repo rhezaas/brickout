@@ -2,6 +2,7 @@
 
 #include <shapes/Shape.h>
 
+
 Circle::Circle(std::vector<float> rgbColor, float radius, float x, float y) : Shape(rgbColor, radius, radius, x, y) {
     this->create();
 }

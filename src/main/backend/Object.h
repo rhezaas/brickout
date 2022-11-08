@@ -6,6 +6,7 @@
 #include <types/aliases/opengl.h>
 #include <types/structs/Vertex.h>
 
+
 class Object {
     private:
         unsigned int vertexArr;

@@ -2,6 +2,7 @@
 
 #include <shapes/Shape.h>
 
+
 Rectangle::Rectangle(std::vector<float> rgbColor, float width, float height, float x, float y) : Shape(rgbColor, width, height, x, y) {
     this->create();
 }

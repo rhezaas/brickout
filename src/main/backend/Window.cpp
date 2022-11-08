@@ -5,6 +5,7 @@
 
 #include <types/aliases/opengl.h>
 
+
 Window::Window() {
     OpenGL::Init();
 

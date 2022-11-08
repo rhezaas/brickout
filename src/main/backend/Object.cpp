@@ -3,6 +3,7 @@
 #include <types/aliases/opengl.h>
 #include <types/structs/Vertex.h>
 
+
 Object::Object() {};
 
 Object::Object(OpenGL::ObjectType type, std::vector<Vertex> vertices, std::vector<unsigned int> indices) {

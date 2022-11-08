@@ -3,6 +3,7 @@
 
 #include <types/aliases/math.h>
 
+
 struct MVP {
     unsigned int mvpUniform;
     Math::Mat4 projection;
