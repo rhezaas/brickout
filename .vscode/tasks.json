@@ -1,0 +1,45 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "conan:install",
+            "type": "shell",
+            "command": "conan install -if build ."
+        },
+        {
+            "label": "cmake:init",
+            "type": "shell",
+            "command": "cmake --no-warn-unused-cli -S${workspaceFolder} -B${workspaceFolder}/build -G \"Unix Makefiles\""
+        },
+        {
+            "label": "clearProject",
+            "type": "shell",
+            "command": "rm -rf build/ dist/"
+        },
+        {
+            "label": "rebuildProject",
+            "type": "shell",
+            "dependsOn": ["clearProject", "conan:install", "cmake:init"],
+            "dependsOrder": "sequence",
+            "command": "echo \"done!!\""
+        },
+        {
+            "label": "cpp:build",
+            "type": "shell",
+            "command": "cmake --build build -- -j3",
+        },
+        {
+            "label": "cpp:run",
+            "type": "shell",
+            "dependsOn": ["cpp:build"],
+            "command": "./dist/brickout",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            },
+        }
+    ]
+}
