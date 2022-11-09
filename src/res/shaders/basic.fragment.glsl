@@ -1,9 +1,9 @@
 #version 330 core
 
-in vec3 shaderOutputColor;
+in vec4 shaderOutputColor;
 
 out vec4 fragmentColor;
 
 void main() {
-   fragmentColor = vec4(shaderOutputColor, 1.0);
+   fragmentColor = shaderOutputColor;
 };

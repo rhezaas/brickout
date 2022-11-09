@@ -18,8 +18,7 @@ int main(int argc, char *argv[]) {
     // setup window
     window.create(WindowConstant::Width, WindowConstant::Height, "Brickout");
 
-    Rectangle block({1.0, 0.0, 1.0}, 100.0, 100.0, 0.0, 0.0);
-    Circle ball({1.0, 0.0, 1.0}, 100.0, 0.0, 0.0);
+    Rectangle block({1.0, 0.0, 1.0, 1.0}, 100.0, 100.0, 0.0, 0.0);
 
     // setup shader
     Shader shader;
@@ -36,7 +35,7 @@ int main(int argc, char *argv[]) {
 
     // renderer
     window.render([&](OpenGL::Window *window) -> void {
-        ball.draw(mvp);
+        block.draw(mvp);
     });
 
     window.terminate();

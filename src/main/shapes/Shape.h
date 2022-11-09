@@ -19,7 +19,7 @@ class Shape {
         Object object;
 
         Math::Mat4 model;
-        std::vector<float> rgbColor;
+        std::vector<float> rgbaColor;
 
     protected:
         void create(std::vector<Vertex> vertices, std::vector<unsigned int> indices);
@@ -27,14 +27,14 @@ class Shape {
         Math::Mat4 getModel();
 
     public:
-        Shape(std::vector<float> rgbColor, float width, float height, float x, float y);
+        Shape(std::vector<float> rgbaColor, float width, float height, float x, float y);
         void draw(MVP mvp);
         
         void setX(float x);
         void setY(float y);
         void setWidth(float width);
         void setHeight(float height);
-        void setColor(std::vector<float> rgbColor);
+        void setColor(std::vector<float> rgbaColor);
 
         float getX();
         float getY();
