@@ -22,6 +22,8 @@ add_library(backend
     ${BACKEND}/Window.cpp
     ${BACKEND}/Object.cpp
     ${BACKEND}/Shader.cpp
+    ${BACKEND}/Texture.cpp
+    ${BACKEND}/Error.cpp
 )
 
 add_library(shapes
@@ -35,8 +37,11 @@ target_include_directories(types PRIVATE INTERFACE ${MAIN})
 target_include_directories(backend PRIVATE ${MAIN})
 target_include_directories(shapes PRIVATE ${MAIN})
 
+# shared library
+find_package(OpenGL REQUIRED)
+
 # linking needed library
-target_link_libraries(types PRIVATE INTERFACE ${CONAN_LIBS})
+target_link_libraries(types PRIVATE INTERFACE OpenGL::GL ${CONAN_LIBS})
 target_link_libraries(shapes PRIVATE
     backend
 )

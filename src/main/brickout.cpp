@@ -3,6 +3,7 @@
 
 #include <backend/Window.h>
 #include <backend/Shader.h>
+#include <backend/Texture.h>
 
 #include <shapes/Circle.h>
 #include <shapes/Rectangle.h>
@@ -25,6 +26,10 @@ int main(int argc, char *argv[]) {
     shader.addSource(OpenGL::ShaderType::VertexShader, "dist/res/shaders/basic.vertex.glsl");
     shader.addSource(OpenGL::ShaderType::FragmentShader, "dist/res/shaders/basic.fragment.glsl");
     shader.compile();
+
+    // setup texture
+    Texture brickTexture("dist/res/textures/brick.png");
+    brickTexture.compile();
 
     // setup mvp
     MVP mvp = {

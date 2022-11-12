@@ -3,6 +3,8 @@
 #include <iostream>
 #include <functional>
 
+#include "Error.h"
+
 #include <types/aliases/opengl.h>
 
 
@@ -11,7 +13,8 @@ Window::Window() {
 
     OpenGL::WindowHint(OpenGL::Type::VersionMajor, 4);                                  // required: specify opengl major version
     OpenGL::WindowHint(OpenGL::Type::VersionMinor, 6);                                  // required: specify opengl minor version
-    OpenGL::WindowHint(OpenGL::Type::OpenGLProfile, OpenGL::Type::OpenGLCoreProfile);   // required: set opengl profile to core 
+    OpenGL::WindowHint(OpenGL::Type::OpenGLProfile, OpenGL::Type::OpenGLCoreProfile);   // required: set opengl profile to core
+    OpenGL::WindowHint(OpenGL::Type::Debug, true);
 }
 
 void Window::create(unsigned int width, unsigned int height, std::string title) {
@@ -27,6 +30,8 @@ void Window::create(unsigned int width, unsigned int height, std::string title) 
         std::cout << "Failed to initialize GLAD" << std::endl;
         return;
     }
+
+    Error().listen();
 }
 
 void Window::render(std::function<void(OpenGL::Window *window)> fn) {

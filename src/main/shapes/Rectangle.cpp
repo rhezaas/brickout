@@ -13,18 +13,22 @@ void Rectangle::create() {
         {
             Math::Vec3( (this->getWidth() / 2),  (this->getHeight() / 2), 0.0),                                 // position
             Math::Vec4(this->getColor()[0], this->getColor()[1], this->getColor()[2], this->getColor()[3]),     // color
+            Math::Vec2(1.0, 1.0),                                                                               // texture
         },
         {
             Math::Vec3(-(this->getWidth() / 2),  (this->getHeight() / 2), 0.0),                                 // position
             Math::Vec4(this->getColor()[0], this->getColor()[1], this->getColor()[2], this->getColor()[3]),     // color
+            Math::Vec2(0.0, 1.0),                                                                               // texture
         },
         {
             Math::Vec3(-(this->getWidth() / 2), -(this->getHeight() / 2), 0.0),                                 // position
             Math::Vec4(this->getColor()[0], this->getColor()[1], this->getColor()[2], this->getColor()[3]),     // color
+            Math::Vec2(0.0, 0.0),                                                                               // texture
         },
         {
             Math::Vec3( (this->getWidth() / 2), -(this->getHeight() / 2), 0.0),                                 // position
             Math::Vec4(this->getColor()[0], this->getColor()[1], this->getColor()[2], this->getColor()[3]),     // color
+            Math::Vec2(1.0, 0.0),                                                                               // texture
         },
     };
 

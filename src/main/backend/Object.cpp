@@ -30,8 +30,12 @@ Object::Object(OpenGL::ObjectType type, std::vector<Vertex> vertices, std::vecto
     OpenGL::EnableVertexAttribArray(0);
 
     // color
-    OpenGL::VertexAttribPointer(1, 3, OpenGL::DataType::Float, OpenGL::DataType::False, sizeof(Vertex), (void*)(offsetof(Vertex, rgbaColor)));
+    OpenGL::VertexAttribPointer(1, 4, OpenGL::DataType::Float, OpenGL::DataType::False, sizeof(Vertex), (void*)(offsetof(Vertex, rgbaColor)));
     OpenGL::EnableVertexAttribArray(1);
+
+    // texture
+    OpenGL::VertexAttribPointer(2, 2, OpenGL::DataType::Float, OpenGL::DataType::False, sizeof(Vertex), (void*)(offsetof(Vertex, texture)));
+    OpenGL::EnableVertexAttribArray(2);
 
     // unbind
     OpenGL::UseProgram(0);
