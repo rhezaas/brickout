@@ -29,7 +29,7 @@ void Error::listen() {
                 case OpenGL::DebugSource::ShaderCompiler:   std::cout << "Source: Shader Compiler"; break;
                 case OpenGL::DebugSource::ThirdParty:       std::cout << "Source: Third Party"; break;
                 case OpenGL::DebugSource::Application:      std::cout << "Source: Application"; break;
-                case OpenGL::DebugSource::Other:            std::cout << "Source: Other"; break;
+                case OpenGL::DebugSource::OtherSource:            std::cout << "Source: Other"; break;
             } std::cout << std::endl;
 
             switch (type) {

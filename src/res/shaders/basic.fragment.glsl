@@ -8,5 +8,6 @@ out vec4 fragmentColor;
 uniform sampler2D basicTexture;
 
 void main() {
-   fragmentColor = texture(basicTexture, shaderOutputTexture) * shaderOutputColor;
+   // fragmentColor = texture(basicTexture, shaderOutputTexture) * shaderOutputColor;
+   fragmentColor = shaderOutputColor;
 };

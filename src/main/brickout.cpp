@@ -19,7 +19,8 @@ int main(int argc, char *argv[]) {
     // setup window
     window.create(WindowConstant::Width, WindowConstant::Height, "Brickout");
 
-    Rectangle block({1.0, 0.0, 1.0, 1.0}, 100.0, 100.0, 0.0, 0.0);
+    // add shape
+    Rectangle block({1.0, 1.0, 1.0, 1.0}, 100.0, 100.0, 0.0, 0.0);
 
     // setup shader
     Shader shader;

@@ -109,7 +109,7 @@ namespace OpenGL {
         ShaderCompiler = GL_DEBUG_SOURCE_SHADER_COMPILER,
         ThirdParty= GL_DEBUG_SOURCE_THIRD_PARTY,
         Application = GL_DEBUG_SOURCE_APPLICATION,
-        Other = GL_DEBUG_SOURCE_OTHER,
+        OtherSource = GL_DEBUG_SOURCE_OTHER,
     };
 
     enum DebugSeverity {
@@ -149,7 +149,7 @@ namespace OpenGL {
     };
 
     enum ColorType {
-        RGBA = GL_RGBA8,
+        RGBA = GL_RGBA,
     };
 };
 
