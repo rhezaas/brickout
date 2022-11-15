@@ -2,6 +2,7 @@
 glfw/3.3.8
 glad/0.1.36
 glm/cci.20220420
+stb/cci.20210910
 
 [generators]
 cmake
