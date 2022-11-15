@@ -6,9 +6,12 @@
 #include <types/aliases/opengl.h>
 
 Texture::Texture(std::string path) {
+    Image::FlipVertically(true);
     this->buffer = Image::Load(path.c_str(), &this->width, &this->height, &this->bitPerPixel, 4);
 
     OpenGL::Textures(1, &this->id);
+    OpenGL::BindTexture(OpenGL::TextureType::Texture2D, this->id);
+
     OpenGL::TextureFilter(OpenGL::TextureType::Texture2D, OpenGL::TextureType::MinFilter, OpenGL::TextureType::MipMapLinear);
     OpenGL::TextureFilter(OpenGL::TextureType::Texture2D, OpenGL::TextureType::MagFilter, OpenGL::TextureType::Linear);
     OpenGL::TextureFilter(OpenGL::TextureType::Texture2D, OpenGL::TextureType::WrapX, OpenGL::TextureType::Repeat);
