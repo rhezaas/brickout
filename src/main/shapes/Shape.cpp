@@ -8,12 +8,12 @@
 #include <types/structs/ModelViewProjection.h>
 
 
-Shape::Shape(std::vector<float> rgbColor, float width, float height, float x, float y) {
+Shape::Shape(std::vector<float> rgbaColor, float width, float height, float x, float y) {
     this->x = x;
     this->y = y;
     this->width = width;
     this->height = height;
-    this->rgbColor = rgbColor;
+    this->rgbaColor = rgbaColor;
 
     this->model = Math::Translate(Math::Mat4(1.0), Math::Vec3(((this->width / 2) + this->x), -((this->height / 2) + this->y), 0));
 }
@@ -44,8 +44,8 @@ void Shape::setHeight(float height) {
     this->height = height;
 }
 
-void Shape::setColor(std::vector<float> rgbColor) {
-    this->rgbColor = rgbColor;
+void Shape::setColor(std::vector<float> rgbaColor) {
+    this->rgbaColor = rgbaColor;
 }
 
 float Shape::getX() {
@@ -65,7 +65,7 @@ float Shape::getHeight() {
 }
 
 std::vector<float> Shape::getColor() {
-    return this->rgbColor;
+    return this->rgbaColor;
 }
 
 void Shape::setModel(Math::Mat4 model) {

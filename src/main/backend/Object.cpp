@@ -18,7 +18,7 @@ Object::Object(OpenGL::ObjectType type, std::vector<Vertex> vertices, std::vecto
     // setup array buffer
     OpenGL::Buffers(1, &this->buffer);
     OpenGL::BindBuffer(OpenGL::Type::ArrayBuffer, this->buffer);
-    OpenGL::BufferData(OpenGL::Type::ArrayBuffer, this->vertices.size() * sizeof(this->vertices), &this->vertices[0], OpenGL::Type::DrawStatic);
+    OpenGL::BufferData(OpenGL::Type::ArrayBuffer, this->vertices.size() * sizeof(Vertex), &this->vertices[0], OpenGL::Type::DrawStatic);
 
     // set element buffer
     OpenGL::Buffers(1, &this->elementBuffer);
@@ -29,8 +29,13 @@ Object::Object(OpenGL::ObjectType type, std::vector<Vertex> vertices, std::vecto
     OpenGL::VertexAttribPointer(0, 3, OpenGL::DataType::Float, OpenGL::DataType::False, sizeof(Vertex), (void*)(offsetof(Vertex, position)));
     OpenGL::EnableVertexAttribArray(0);
 
-    OpenGL::VertexAttribPointer(1, 3, OpenGL::DataType::Float, OpenGL::DataType::False, sizeof(Vertex), (void*)(offsetof(Vertex, rgbColor)));
+    // color
+    OpenGL::VertexAttribPointer(1, 4, OpenGL::DataType::Float, OpenGL::DataType::False, sizeof(Vertex), (void*)(offsetof(Vertex, rgbaColor)));
     OpenGL::EnableVertexAttribArray(1);
+
+    // texture
+    OpenGL::VertexAttribPointer(2, 2, OpenGL::DataType::Float, OpenGL::DataType::False, sizeof(Vertex), (void*)(offsetof(Vertex, texture)));
+    OpenGL::EnableVertexAttribArray(2);
 
     // unbind
     OpenGL::UseProgram(0);

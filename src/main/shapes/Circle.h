@@ -9,7 +9,7 @@ class Circle : public Shape {
         void create();
     
     public:
-        Circle(std::vector<float> rgbColor, float radius, float x, float y);
+        Circle(std::vector<float> rgbaColor, float radius, float x, float y);
         ~Circle();
 };
 

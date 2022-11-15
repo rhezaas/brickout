@@ -65,7 +65,8 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "optional": "cpp"
     },
     "files.exclude": {
         "**/**/CMakeLists.txt": false,

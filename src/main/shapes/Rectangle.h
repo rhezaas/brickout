@@ -9,7 +9,7 @@ class Rectangle : public Shape {
         void create();
     
     public:
-        Rectangle(std::vector<float> rgbColor, float width, float height, float x, float y);
+        Rectangle(std::vector<float> rgbaColor, float width, float height, float x, float y);
         ~Rectangle();
 };
 

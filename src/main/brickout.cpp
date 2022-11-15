@@ -3,6 +3,7 @@
 
 #include <backend/Window.h>
 #include <backend/Shader.h>
+#include <backend/Texture.h>
 
 #include <shapes/Circle.h>
 #include <shapes/Rectangle.h>
@@ -18,14 +19,18 @@ int main(int argc, char *argv[]) {
     // setup window
     window.create(WindowConstant::Width, WindowConstant::Height, "Brickout");
 
-    Rectangle block({1.0, 0.0, 1.0}, 100.0, 100.0, 0.0, 0.0);
-    Circle ball({1.0, 0.0, 1.0}, 100.0, 0.0, 0.0);
+    // add shape
+    Rectangle block({1.0, 1.0, 1.0, 1.0}, 100.0, 100.0, 0.0, 0.0);
 
     // setup shader
     Shader shader;
     shader.addSource(OpenGL::ShaderType::VertexShader, "dist/res/shaders/basic.vertex.glsl");
     shader.addSource(OpenGL::ShaderType::FragmentShader, "dist/res/shaders/basic.fragment.glsl");
     shader.compile();
+
+    // setup texture
+    Texture brickTexture("dist/res/textures/brick.png");
+    brickTexture.compile();
 
     // setup mvp
     MVP mvp = {
@@ -36,7 +41,7 @@ int main(int argc, char *argv[]) {
 
     // renderer
     window.render([&](OpenGL::Window *window) -> void {
-        ball.draw(mvp);
+        block.draw(mvp);
     });
 
     window.terminate();

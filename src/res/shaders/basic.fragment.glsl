@@ -1,9 +1,13 @@
 #version 330 core
 
-in vec3 shaderOutputColor;
+in vec4 vertexOutputColor;
+in vec2 vertexOutputTexture;
 
 out vec4 fragmentColor;
 
+uniform sampler2D basicTexture;
+
 void main() {
-   fragmentColor = vec4(shaderOutputColor, 1.0);
+   fragmentColor = texture(basicTexture, vertexOutputTexture);
+   // fragmentColor = vertexOutputColor;
 };

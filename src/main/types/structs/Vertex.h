@@ -6,7 +6,8 @@
 
 struct Vertex {
     Math::Vec3 position;
-    Math::Vec3 rgbColor;
+    Math::Vec4 rgbaColor;
+    Math::Vec2 texture;
 };
 
 #endif
